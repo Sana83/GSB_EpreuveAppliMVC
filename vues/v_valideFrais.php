@@ -154,10 +154,11 @@ if($infoFraisHorsForfait){ ?>
                            onclick="return confirm('Voulez-vous vraiment supprimer ou reporter ce frais hors forfait?');">Supprimer</a>
                     </td>
                 </tr>
+             <?php } ?>
         </table>
     </div>
 </form>
-            <?php }}else{ ?>
+            <?php }else{ ?>
             <div class="panel panel-info" style="border-color: #FF7302;">
                     <div class="panel-heading" style="border-color: #FF7302; background-color: #FF7302; color: white;">Pas d'éléments hors forfais</div>
             </div>
@@ -168,4 +169,3 @@ if($infoFraisHorsForfait){ ?>
     <input id="okFicheFrais" type="submit" value="Valider" class="btn btn-success" 
            accept=""role="button" onclick="return confirm('Voulez-vous vraiment valider cette fiche de frais ?');"> 
 </form></br></br>
-

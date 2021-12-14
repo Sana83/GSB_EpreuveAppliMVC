@@ -706,4 +706,73 @@ class PdoGsb
         $requetePrepare->bindParam(':unId', $id, PDO::PARAM_STR);
         $requetePrepare->execute();
     }
+    
+    public function getNomPrenomVisiteur($id) {
+        $requetePrepare = PdoGsb::$monPdo->prepare(
+                'SELECT visiteur.prenom, visiteur.nom '
+                . 'FROM visiteur '
+                . 'WHERE visiteur.id = :unId '
+        );
+        $requetePrepare->bindParam(':unId', $id, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        return $requetePrepare->fetch();
+    }
+    
+    /**
+     * 
+     * @return un tableau avec tous les utilisateur en attente de valider frais
+     */
+    public function getUtilisateursVA() {
+        $requetePrepare = PdoGsb::$monPdo->prepare(
+                'SELECT DISTINCT visiteur.id as idVisiteurVA, visiteur.nom as nom, visiteur.prenom'
+                . ' as prenom from visiteur inner join fichefrais ON visiteur.id = fichefrais.idvisiteur'
+                . ' WHERE fichefrais.idetat = \'VA\' '
+                . ' ORDER by nom '
+        );
+        $requetePrepare->bindParam(':unId', $id, PDO::PARAM_INT);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetchAll();
+        return $laLigne;
+    }
+    
+    /**
+     * Retourne la liste de mois pour lesquels unVisiteur à une fiche
+     * de frais validé
+     * @param type $idVisiteur
+     * @return type
+     */
+    public function getLesMoisDisponiblesVA($idVisiteur) {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+                'SELECT fichefrais.mois AS mois FROM fichefrais '
+                . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
+                . 'and fichefrais.idetat = \'VA\' '
+                . 'ORDER BY fichefrais.mois desc'
+        );
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $lesMois = array();
+        while ($laLigne = $requetePrepare->fetch()) {
+            $mois = $laLigne['mois'];
+            $numAnnee = substr($mois, 0, 4);
+            $numMois = substr($mois, 4, 2);
+            $lesMois[] = array(
+                'mois' => $mois,
+                'numAnnee' => $numAnnee,
+                'numMois' => $numMois
+            );
+        }
+        return $lesMois;
+    }
+    
+     public function estRefuse($idFraisHf) {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+                'select etatFraisHf '
+                . 'from lignefraishorsforfait '
+                . 'WHERE lignefraishorsforfait.id = :unIdFraisHf '
+        );
+        $requetePrepare->bindParam(':unIdFraisHf', $idFraisHf, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetch();
+        return $laLigne;
+    }
 }

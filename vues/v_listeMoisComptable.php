@@ -17,7 +17,7 @@
 <h2>Mes fiches de frais</h2>
 <div class="row">
     <div class="col-md-4">
-        <h3>Sélectionner un mois : </h3>
+        <h3>Sélectionner un mois et ensuite un visiteur : </h3>
     </div>
     <div class="col-md-4">
         <form action="index.php?uc=valideFrais&action=selectionnerVisiteur" 
