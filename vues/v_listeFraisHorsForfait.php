@@ -1,6 +1,6 @@
 <?php
 /**
- * Vue Liste des frais hors forfait
+ * vue liste frais hors forfait
  *
  * PHP Version 7
  *
@@ -8,6 +8,7 @@
  * @package   GSB
  * @author    Réseau CERTA <contact@reseaucerta.org>
  * @author    José GIL <jgil@ac-nice.fr>
+ * @author    Lambert Erwan <>
  * @copyright 2017 Réseau CERTA
  * @license   Réseau CERTA
  * @version   GIT: <0>
@@ -71,7 +72,7 @@
                            class="form-control" value="">
                 </div>
             </div>
-            <button class="btn btn-success" name="btnHF" type="submit">Ajouter</button>
+            <button class="btn btn-success" type="submit" name="BoutonValide">Ajouter</button>
             <button class="btn btn-danger" type="reset">Effacer</button>
         </form>
     </div>

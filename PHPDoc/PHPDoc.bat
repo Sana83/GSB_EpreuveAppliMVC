@@ -1,0 +1,1 @@
+php phpDocumentor.phar -d F:\cours_BTS_SIO_2\gsb\GSB_AppliMVC -t F:\cours_BTS_SIO_2\gsb\DocPHP

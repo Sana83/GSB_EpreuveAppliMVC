@@ -1,6 +1,6 @@
 <?php
 /**
- * Vue État de Frais
+ * vue etat frais
  *
  * PHP Version 7
  *
@@ -8,6 +8,9 @@
  * @package   GSB
  * @author    Réseau CERTA <contact@reseaucerta.org>
  * @author    José GIL <jgil@ac-nice.fr>
+ * @author    Hoarau Tangui <tangui.hoarau@hotmail.com>
+ * @author    Lambert Erwan <>
+ * @author    Maestracci Rémi <>
  * @copyright 2017 Réseau CERTA
  * @license   Réseau CERTA
  * @version   GIT: <0>
@@ -22,6 +25,7 @@
         <strong><u>Etat :</u></strong> <?php echo $libEtat ?>
         depuis le <?php echo $dateModif ?> <br> 
         <strong><u>Montant validé :</u></strong> <?php echo $montantValide ?>
+            </br><a onclick="window.open('pdf/pdf.php?id=<?php echo $_SESSION['idVisiteur'] ?>&mois=<?php echo $_SESSION['date']?>')" class="btn btn-success">Fichier PDF</a></br></br></br>
     </div>
 </div>
 <div class="panel panel-info">
