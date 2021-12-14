@@ -1,3 +1,4 @@
+<?php
 /**
  * vue valide frais
  *
@@ -13,6 +14,7 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+?>
 <form method="post" 
       action="index.php?uc=valideFrais&action=CorrigerNbJustificatifs" 
       role="form">

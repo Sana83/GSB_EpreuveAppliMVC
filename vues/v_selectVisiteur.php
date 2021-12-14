@@ -1,3 +1,4 @@
+<?php
 /**
  * vue select visiteur
  *
@@ -13,6 +14,7 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+?>
 <div class="row">
     <div class="col-md-4">
         <form action="index.php?uc=valideFrais&action=validerFicheDeFrais" method="post" role="form">

@@ -1,3 +1,4 @@
+<?php
 /**
  * vue seccessful
  *
@@ -13,7 +14,7 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
-     
+?>     
 <?php
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 switch ($action) {

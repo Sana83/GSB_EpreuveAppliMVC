@@ -1,3 +1,5 @@
+
+<?php
 /**
  * vue paiement frais
  *
@@ -13,5 +15,5 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
-<?php
 echo 'en construction';
+?>

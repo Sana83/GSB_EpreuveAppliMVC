@@ -1,3 +1,4 @@
+<?php
 /**
  * vue aucune fiche
  *
@@ -13,5 +14,6 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+?>
 <br>
 <h4>Pas de fiche de frais pour ce visiteur ce mois</h4>

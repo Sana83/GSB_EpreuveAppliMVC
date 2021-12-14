@@ -1,3 +1,4 @@
+<?php
 /**
  * vue suivre frais
  *
@@ -13,6 +14,7 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+?>
 <link rel="stylesheet" href="../styles/style.css">
 <div class="row">
     <div class="row">
