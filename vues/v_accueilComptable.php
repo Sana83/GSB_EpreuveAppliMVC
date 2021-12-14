@@ -37,11 +37,11 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
-                        <a href="index.php?uc=valideFrais"
+                        <a href="index.php?uc=valideFrais&action=selectionnerMois"
                            class="btn btn-success btn-lg" role="button">
                             <span class="glyphicon glyphicon-pencil"></span>
                             <br>Valider fiche de frais</a>
-                        <a href="index.php?uc=paiementFrais"
+                        <a href="index.php?uc=suivreFrais&action=choisirVisiteur"
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <br>Suivre le paiement fiche de frais</a>
