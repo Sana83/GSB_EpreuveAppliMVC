@@ -66,10 +66,9 @@
             $libelle = $unFraisHorsForfait['libelle'];
             $montant = $unFraisHorsForfait['montant'];
             $id = $unFraisHorsForfait['id'];
-            $estRefuse = $pdo->estRefuse($id);
             ?>
             <?php
-            if ($estRefuse['etatFraisHf'] == 'RE') {
+            if (substr($libelle, 0,6)=== 'REFUSE') {
                 ?> <tr  style="background-color: indianred;"><?php
             } else {
                 ?><tr><?php }
