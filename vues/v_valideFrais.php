@@ -37,6 +37,10 @@
                 foreach ($infoFraisHorsForfait as $frais) {
                     $montant = $frais['montant'];
                     $montants += $montant;
+                    $libellehorsFraisHF = $frais['libelle'];
+                    if (substr($libellehorsFraisHF, 0,6) === 'REFUSE') {
+                        $montants -= $montant;
+                    }
                 }
                 foreach ($infoFraisForfait as $frais) {
                     $idLibelle = $frais['idfrais'];
@@ -166,9 +170,14 @@ if($infoFraisHorsForfait){ ?>
                                accept=""role="button"> 
                         <input id="annuler" type="reset" value="Réinitialiser" class="btn btn-warning"" 
                                accept=""role="button">
+                        <?php if(substr($libellehorsFraisHF, 0, 6) === 'REFUSE') {
+                            ajouterErreur('Cette fiche a déjà été refuser');
+                            include 'v_erreurs.php';
+                        } else { ?>
                         <a href="index.php?uc=valideFrais&action=supprimerFrais&idFrais=<?php echo $idHF ?>&mois=<?php echo $mois ?>&idVisiteur=<?php echo $_SESSION['visiteur'] ?>" 
                            type="reset" class="btn btn-danger" role="button"
-                           onclick="return confirm('Voulez-vous vraiment supprimer ou reporter ce frais hors forfait?');">Supprimer</a>
+                           onclick="return confirm('Voulez-vous vraiment refuser ou reporter ce frais hors forfait?');">Refuser ou Reporter</a>
+                        <?php } ?>
                     </td>
                 </tr>
              <?php } ?>

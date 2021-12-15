@@ -1,4 +1,5 @@
 
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -62,4 +63,5 @@ with HTMLSession() as s:
             break
 
 # Fermer la fenêtre du navigateur
+
 driver.quit()

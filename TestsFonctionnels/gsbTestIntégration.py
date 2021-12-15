@@ -1,3 +1,4 @@
+
 # Import des prérequis ##########################
 from datetime import datetime                   #
 from selenium import webdriver                  #
@@ -172,4 +173,5 @@ try:
     log("- ajout des valeurs élément hors forfait : OK")
 except Exception as ex:
     log("- Erreur dans l'ajout des valeurs hors forfait'...")
+
     print(ex)
